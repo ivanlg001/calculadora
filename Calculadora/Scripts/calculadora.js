@@ -53,10 +53,11 @@ function btnClear() {
 function btnEnter() {
     write("*** ");
 }
-let currentVal = "";
+
 function write(btnValue) {
-    
     $('#display').val($('#display').val() + btnValue);
+    //$('#display').val($('#display').val() + btnValue);
+    console.log($('#display').val());
     
 }
 
@@ -66,17 +67,7 @@ function btnResolver() {
 
 
 function btnMemory() {
-    $.ajax({
-        type: "GET",
-        datatype: "json",
-        url: "api/Calculadora/" + 1,
-        success: function (result) {
-            alert(result);
-        },
-        error: function () {
-            alert("Error!!!");
-        }
-    });
+    alert("Guardar");
 }
 
 
