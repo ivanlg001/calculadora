@@ -51,7 +51,7 @@ function btnClear() {
     display.value = "";
 }
 function btnEnter() {
-    write("*** ");
+    write(" * ");
 }
 
 function write(btnValue) {

@@ -13,9 +13,9 @@ namespace Calculadora.DataAccess
     public class DataAccess
     {
         private readonly SqlConnection _connection;
-        public DataAccess()
+        public DataAccess(string connection)
         {
-            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionDB"].ConnectionString);
+            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings[connection].ConnectionString);
         }
 
         private object GetNullableValue(SqlDataReader reader, PropertyInfo property)
