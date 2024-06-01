@@ -97,11 +97,27 @@ function GetAll() {
     });
 }
 
-function GetById(filter) {
+function GetByFilter(filter) {
     $.ajax({
         type: "GET",
         dataType: "json",
         url: "api/Calculadora" + filter,
+        success: function (result) {
+            alert(result);
+        },
+        error: function () {
+            alert("error");
+        }
+
+    });
+}
+
+function DeleteById(id) {
+    $.ajax({
+        type: "Delete",
+        dataType: "json",
+        url: "api/Calculadora",
+        data: { "": id },
         success: function (result) {
             alert(result);
         },
