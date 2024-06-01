@@ -16,7 +16,7 @@ namespace Calculadora.Controllers
         }
 
         // GET: api/Calculadora/5
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult Get(string filter)
         {
             string result = "entro";
             if(result == null)

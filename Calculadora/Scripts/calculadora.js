@@ -97,6 +97,21 @@ function GetAll() {
     });
 }
 
+function GetById(filter) {
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "api/Calculadora" + filter,
+        success: function (result) {
+            alert(result);
+        },
+        error: function () {
+            alert("error");
+        }
+
+    });
+}
+
 
 
 
