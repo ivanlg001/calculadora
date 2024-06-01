@@ -67,7 +67,19 @@ function btnResolver() {
 
 
 function btnMemory() {
-    GetAll();
+    const value = $('#display').val();
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "api/Calculadora",
+        data: { "": value },
+        success: function (result) {
+            alert(result);
+        },
+        error: function () {
+            alert("error");
+        }
+    });
 }
 
 function GetAll() {
