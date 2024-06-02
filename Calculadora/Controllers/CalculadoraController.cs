@@ -35,10 +35,10 @@ namespace Calculadora.Controllers
         }
 
         // POST: api/Calculadora
-        public IEnumerable<string> Post([FromBody]string value)
+        public bool Post([FromBody]Ecuacion currentEcuacion)
         {
-            List<string> lstEcuacion = new List<string> { value };
-            return lstEcuacion;
+            
+            return calculadoraHandler.CreateEcuacion(currentEcuacion);
         }
 
         // PUT: api/Calculadora/5

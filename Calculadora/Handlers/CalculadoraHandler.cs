@@ -37,26 +37,21 @@ namespace Calculadora.Handlers
             return res;
         }
 
-        public bool CreateEcuacion(string ecuacion)
+        public bool CreateEcuacion(Ecuacion ecuacion)
         {
             bool result = false;
 
-            string[] ecuacionList = ecuacion.Split('*');
-
-            if(ecuacionList.Length >= 4)
+            object request = new
             {
-                object request = new
-                {
-                    primerEcuacion = ecuacionList[0],
-                    segundaEcuacion = ecuacionList[1],
-                    valorX = ecuacionList[2],
-                    valorY = ecuacionList[3]
-                };
-                var res = dataAccess.InsertModel<object>("dbo.spi_insertEcuacion", request);
+                primerEcuacion = ecuacion.PrimerEcuacion,
+                segundaEcuacion = ecuacion.SegundaEcuacion,
+                valorX = ecuacion.ValorX,
+                valorY = ecuacion.ValorY
+            };
+            var res = dataAccess.InsertModel<object>("dbo.spi_insertEcuacion", request);
 
-                result = res > 0 ? true : false;
-            }
-
+            result = res > 0 ? true : false;
+            
             return result;
         }
 
