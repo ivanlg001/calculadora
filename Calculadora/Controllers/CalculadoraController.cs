@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Calculadora.Handlers;
+using Calculadora.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,22 +11,27 @@ namespace Calculadora.Controllers
 {
     public class CalculadoraController : ApiController
     {
-        // GET: api/Calculadora
-        public IEnumerable<string> Get()
+        CalculadoraHandler calculadoraHandler;
+        public CalculadoraController()
         {
-            return new string[] { "value1", "value2" };
+            calculadoraHandler = new CalculadoraHandler();
+        }
+        // GET: api/Calculadora
+        public IEnumerable<Ecuacion> Get()
+        {
+            return calculadoraHandler.GetAll();
         }
 
         // GET: api/Calculadora/5
-        public IHttpActionResult Get(string filter)
-        {
-            string result = "entro";
-            if(result == null)
-            {
-                return NotFound();
-            }
+        //public string Get(string filter)
+        //{
+        //    string result = "entro";
 
-            return Ok(result);
+        //    return result;
+        //}
+        public IEnumerable<Ecuacion> Get(string filter)
+        {
+            return calculadoraHandler.GetEcuacionByFilter(filter);
         }
 
         // POST: api/Calculadora

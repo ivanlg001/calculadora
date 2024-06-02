@@ -15,7 +15,8 @@ namespace Calculadora.DataAccess
         private readonly SqlConnection _connection;
         public DataAccess(string connection)
         {
-            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings[connection].ConnectionString);
+            _connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Calculadora;Trusted_Connection=True;MultipleActiveResultSets=True;");
+            //_connection = new SqlConnection(ConfigurationManager.ConnectionStrings[connection].ConnectionString);
         }
 
         private object GetNullableValue(SqlDataReader reader, PropertyInfo property)

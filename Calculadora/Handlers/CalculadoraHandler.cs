@@ -19,7 +19,7 @@ namespace Calculadora.Handlers
         {
             object request = new
             {
-                filter = "0"
+                filter = "*"
             };
             var res = dataAccess.GetListByParameter<Ecuacion, object>("dbo.spr_readEcuaciones", request);
 

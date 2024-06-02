@@ -8,45 +8,48 @@
     <script src="Scripts/calculadora.js"></script>
 </head>
 <body>
+    <table class="calculadora">
+        <tr>
+            <!--<td colspan="4"><span id="display" /></td>-->
+            <td colspan="4"><input type="text" id="display" /></td>
+        <tr>
+                <td><button  class="button button1"  onclick="btnUno()">1</button></td>
+                <td><button class="button button1"  onclick="btnDos()">2</button></td>
+                <td><button class="button button1"  onclick="btnTres()">3</button></td>
+                <td><button class="button0 button2" onclick="btnMas()">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="button button1"  onclick="btnCuatro()">4</button></td>
+                <td><button class="button button1"  onclick="btnCinco()">5</button></td>
+                <td><button class="button button1"  onclick="btnSeis()">6</button></td>
+                <td><button class="button0 button2" onclick="btnMenos()">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="button button1"  onclick="btnSiete()">7</button></td>
+                <td><button class="button button1"  onclick="btnOcho()">8</button></td>
+                <td><button class="button button1"  onclick="btnNueve()">9</button></td>
+                <td><button class="button0 button2" onclick="btnX()">x</button></td>
+            </tr>
+            <tr>
+                <td><button class="button button1"  onclick="btnSigno()">+/-</button></td>
+                <td><button class="button button1"  onclick="btnCero()">0</button></td>
+                <td><button class="button button1"  onclick="btnIgual()">=</button></td>
+                <td><button class="button0 button2" onclick="btnY()">y</button></td>
+            </tr>
+            <tr>
+                <td><button class="button button1" onclick="btnEnter()">Enter</button></td>
+                <td><button class="button button1" onclick="btnMemory()">M</button></td>
+                <td><button class="button button1" onclick="btnClear()">C</button></td>
+            </tr>                                  
+            <tr>
+                <td colspan="4"><button class="button0 button2" onclick="btnResolver()">Resolver</button></td>
+            </tr>
+    </table>
+    <table>
+        <tr>
+            <td><button id="btnRedirect" class="button1" onclick="window.location = 'HistorialEcuaciones.aspx';" value="Historial de Ecuaciones"></button></td>
 
-            <table class="calculadora">
-                <tr>
-                    <!--<td colspan="4"><span id="display" /></td>-->
-                    <td colspan="4"><input type="text" id="display" /></td>
-                <tr>
-                        <td><button  class="button button1"  onclick="btnUno()">1</button></td>
-                        <td><button class="button button1"  onclick="btnDos()">2</button></td>
-                        <td><button class="button button1"  onclick="btnTres()">3</button></td>
-                        <td><button class="button0 button2" onclick="btnMas()">+</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button button1"  onclick="btnCuatro()">4</button></td>
-                        <td><button class="button button1"  onclick="btnCinco()">5</button></td>
-                        <td><button class="button button1"  onclick="btnSeis()">6</button></td>
-                        <td><button class="button0 button2" onclick="btnMenos()">-</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button button1"  onclick="btnSiete()">7</button></td>
-                        <td><button class="button button1"  onclick="btnOcho()">8</button></td>
-                        <td><button class="button button1"  onclick="btnNueve()">9</button></td>
-                        <td><button class="button0 button2" onclick="btnX()">x</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button button1"  onclick="btnSigno()">+/-</button></td>
-                        <td><button class="button button1"  onclick="btnCero()">0</button></td>
-                        <td><button class="button button1"  onclick="btnIgual()">=</button></td>
-                        <td><button class="button0 button2" onclick="btnY()">y</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button button1" onclick="btnEnter()">Enter</button></td>
-                        <td><button class="button button1" onclick="btnMemory()">M</button></td>
-                        <td><button class="button button1" onclick="btnClear()">C</button></td>
-                    </tr>                                  
-                    <tr>
-                        <td colspan="4"><button class="button0 button2" onclick="btnResolver()">Resolver</button></td>
-                    </tr>
-
-            </table>
-
+        </tr>
+    </table>
 </body>
 </html>
