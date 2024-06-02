@@ -44,7 +44,7 @@ function FillTable(data) {
                 + "<td class='customertd'>" + item.SegundaEcuacion + "</td>"
                 + "<td class='customertd'>" + item.ValorX + "</td>"
                 + "<td class='customertd'>" + item.ValorY + "</td>"
-                + "<td class='customertd'>" + "<input type='checkbox'  name='checkBoxAll' class='checkbox' id='chkSave_" + item.Id + "'   />" + "</td>"
+                + "<td class='customertd'>" + "<input type='checkbox'  name='checkBoxAll' class='checkbox'  id='chkSave_" + item.Id + "' value='" + item.Id + "'   />" + "</td>"
                 //  + "<td class='customertd'>" + "<input class='form-control'  name='date' placeholder='" + today + "' type='text' onclick='clickDate(" + item.AgentID + ")' id='date_" + item.AgentID + "'> " + "</td>"
                 + "</tr>";
             $('#tblEcuacion tbody').append(row);
@@ -53,20 +53,37 @@ function FillTable(data) {
     }
 }
 
-function DeleteById(id) {
+function DeleteById() {
+    id = 0;
+    SelectRowToDelete();
+    _id = id;
     $.ajax({
         type: "Delete",
         dataType: "json",
-        url: "api/Calculadora",
-        data: { "": id },
+        url: "api/Calculadora/" + id,
         success: function (result) {
-            alert(result);
+            if (result == true) {
+                GetAll();
+                alert("Eliminado");
+            } else {
+                alert("No se pudo eliminar");
+            }
         },
         error: function () {
             alert("error");
         }
 
     });
+}
+var id = 0;
+function SelectRowToDelete() {
+    var elementos = document.getElementsByName("checkBoxAll");
+    
+    for (x = 0; x < elementos.length; x++) {
+        if (elementos[x].checked == true) {
+            id = elementos[x].value;
+        }
+    }
 }
 
 function clickChkAll() {

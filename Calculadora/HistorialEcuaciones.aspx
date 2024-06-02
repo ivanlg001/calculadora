@@ -20,6 +20,7 @@
                 <tr>
                     <td><input type="button" value="Buscar" id="btnSearch" class="btn btn-primary" data-loading-text="Buscando..." onclick="GetAll();" /></td>
                     <td><input type="button" value="Buscar por filtro" id="btnSearchByFilter" class="btn btn-primary" data-loading-text="Buscando..." onclick="GetByFilter();" /></td>
+                    <td><input type="button" value="Eliminar" id="btnDelete" class="btn btn-danger" data-loading-text="Eliminando..." onclick="DeleteById();" /></td>
                 </tr>
             </table>
             
@@ -45,9 +46,11 @@
                             <div class="fht-cell"></div>
                         </th>
 
-                        <th style="width: 100px;" data-field="updateMan">
-                            <div class="th-inner "><input type="checkbox"  class="checkbox" onchange="clickChkAll();" id="clickChkAll" /></div>
+                        <th style="width: 100px;" >
+                            <div class="th-inner ">Eliminar</div>
                             <div class="fht-cell"></div>
+                            <%--<div class="th-inner "><input type="checkbox"  class="checkbox" onchange="clickChkAll();" id="clickChkAll" /></div>
+                            <div class="fht-cell"></div>--%>
                         </th>
                     </tr>
                 </thead>

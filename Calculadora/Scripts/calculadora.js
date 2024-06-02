@@ -116,8 +116,8 @@ function DeleteById(id) {
     $.ajax({
         type: "Delete",
         dataType: "json",
-        url: "api/Calculadora",
-        data: { "": id },
+        url: "api/Calculadora/",
+        data: { "id": id },
         success: function (result) {
             alert(result);
         },

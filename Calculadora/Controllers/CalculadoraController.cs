@@ -47,8 +47,12 @@ namespace Calculadora.Controllers
         }
 
         // DELETE: api/Calculadora/5
-        public void Delete(int id)
+        public bool Delete(string id)
         {
+            int _id = 0;
+            int.TryParse(id, out _id);
+
+            return calculadoraHandler.DeleteEcuacion(_id);
         }
     }
 }
